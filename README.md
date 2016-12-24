@@ -6,15 +6,15 @@
 
 Django requires these modules:
 
-`pip install djangorestframework `
+`pip3 install djangorestframework `
 
-`pip install django-cors-headers`
+`pip3 install django-cors-headers`
 
-`pip install djangorestframework-jwt`
+`pip3 install djangorestframework-jwt`
 
 then to run the server 
 
-`python manage.py runserver`
+`python3 manage.py runserver`
 
 ###for Angular 2
 
