@@ -6,6 +6,7 @@ class ReducedUrl(models.Model):
     longUrl = models.CharField(max_length=1000)
     shortUrl = models.CharField(max_length=100)
     nb_request = models.IntegerField(default=0)
+    owner = models.ForeignKey('auth.User', related_name='reducedUrls', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.longUrl

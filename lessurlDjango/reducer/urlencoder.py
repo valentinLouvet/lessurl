@@ -1,6 +1,12 @@
-DEFAULT_ALPHABET =  "23456789abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
+DEFAULT_ALPHABET =  "23456789abcdefghijkmnpqrsuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
 DEFAULT_BLOCK_SIZE = 24
 MIN_LENGTH = 5
+
+"""
+provider an encoder and a decoder given a id
+I took this code from https://pypi.python.org/pypi/short_url
+because a simple int to base62 encoding provides consecutive codes
+"""
 
 
 class UrlEncoder(object):

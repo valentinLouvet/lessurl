@@ -11,9 +11,20 @@
   <p>the Url {{reducedUrl.longUrl}} has been reduced in <a [routerLink]="['', reducedUrl.shortUrl]">localhost:3000/{{reducedUrl.shortUrl}}</a></p>
 </div>
 
-<div>
-  <a [routerLink]="['/login']">login/logout</a>
+<div *ngIf="!isAuthenticated">
+  <a [routerLink]="['/register']">register</a>
 </div>
+<br/>
+<div *ngIf="!isAuthenticated">
+  <a [routerLink]="['/login']">login</a>
+</div>
+<br/>
+
+<div *ngIf="isAuthenticated">
+  <a (click)="logout()">logout</a>
+</div>
+<br/>
+
 <div *ngIf="isAuthenticated" >
-  <a>see statistics</a>
+  <a [routerLink]="['/stats']">see statistics</a>
 </div>

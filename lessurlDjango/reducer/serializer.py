@@ -1,27 +1,23 @@
 from rest_framework import serializers
 from .models import ReducedUrl
+from django.contrib.auth.models import User
 
 
-class ReducedUrlSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
-    longUrl = serializers.CharField(max_length=1000)
+class ReducedUrlSerializer(serializers.ModelSerializer):
     shortUrl = serializers.CharField(max_length=100, required=False)
-    nb_request = serializers.IntegerField()
+    nb_request = serializers.IntegerField(required=False)
+    owner = serializers.CharField(source='owner.username',required=False)
+    class Meta:
+        model = ReducedUrl
+        fields = ('id', 'longUrl', 'shortUrl', 'nb_request', 'owner')
 
-    def create(self, validated_data):
-        """
-        Create and return a new `ReducedUrl` instance, given the validated data.
-        """
-        return ReducedUrl.objects.create(**validated_data)
 
-    def update(self, instance, validated_data):
-        """
-        Update and return an existing `Snippet` instance, given the validated data.
-        """
-        instance.longUrl = validated_data.get('longUrl', instance.longUrl)
-        instance.shortUrl = validated_data.get('shortUrl', instance.shortUrl)
-        instance.save()
-        return instance
+class UserSerializer(serializers.ModelSerializer):
+    reducedUrls = serializers.PrimaryKeyRelatedField(many=True, queryset=ReducedUrl.objects.all(), default=[])
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'reducedUrls')
 
 
 

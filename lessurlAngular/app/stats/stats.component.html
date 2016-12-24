@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<ul>
+  <li *ngFor="let reducedUrl of reducedUrls">
+    <p>le raccourci {{reducedUrl.shortUrl}} pour {{reducedUrl.longUrl}} à été utilisé {{reducedUrl.nb_request}} fois</p>
+  </li>
+</ul>

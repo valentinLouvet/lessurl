@@ -1,11 +1,8 @@
-/**
- * Created by valentinlouvet on 23/12/2016.
- */
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
-import {ReducerService} from '../_services/reducer.service'
-import {ReducedUrl} from '../_models/reducedUrl'
+import {ReducerService} from './_services/reducer.service'
+import {ReducedUrl} from './_models/reducedUrl'
 
 
 
