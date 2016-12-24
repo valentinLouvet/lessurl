@@ -4,8 +4,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
-import {ReducerService} from './reducer.service'
-import {ReducedUrl} from './reducedUrl'
+import {ReducerService} from '../_services/reducer.service'
+import {ReducedUrl} from '../_models/reducedUrl'
 
 
 

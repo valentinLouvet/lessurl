@@ -3,8 +3,10 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import {ReducedUrl} from './reducedUrl'
-import {ReducerService} from './reducer.service'
+import {ReducedUrl} from './_models/reducedUrl'
+import {ReducerService} from './_services/reducer.service'
+import { AuthenticationService } from './_services/authentication.service';
+
 
 
 @Component({
@@ -14,10 +16,13 @@ import {ReducerService} from './reducer.service'
 })
 
 export class ReducerComponent implements OnInit{
-  constructor( private reducerService : ReducerService) { }
-
+  constructor(
+    private reducerService : ReducerService,
+    private authenticationService: AuthenticationService
+  ) { }
+  private isAuthenticated;
   ngOnInit():void {
-
+    this.isAuthenticated = this.authenticationService.token
   }
   reducedUrl: ReducedUrl;
 

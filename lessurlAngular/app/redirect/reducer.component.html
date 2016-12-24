@@ -1,4 +1,6 @@
 
+
+
 <div>
   <label></label> <input #longUrl />
   <button (click)="reduce(longUrl.value)">
@@ -7,4 +9,11 @@
 </div>
 <div *ngIf="reducedUrl">
   <p>the Url {{reducedUrl.longUrl}} has been reduced in <a [routerLink]="['', reducedUrl.shortUrl]">localhost:3000/{{reducedUrl.shortUrl}}</a></p>
+</div>
+
+<div>
+  <a [routerLink]="['/login']">login/logout</a>
+</div>
+<div *ngIf="isAuthenticated" >
+  <a>see statistics</a>
 </div>

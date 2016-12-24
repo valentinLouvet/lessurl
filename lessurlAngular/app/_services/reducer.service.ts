@@ -1,7 +1,7 @@
 /**
  * Created by valentinlouvet on 22/12/2016.
  */
-import {ReducedUrl} from './reducedUrl'
+import {ReducedUrl} from './_models/reducedUrl'
 import { Injectable }    from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 
