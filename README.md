@@ -47,6 +47,8 @@ you can login with this superuser:
 
 Angular provides a simple web interface to access these requests, I had no time to add CSS so it is a bit ugly..
 
+you can acces it at localhost:3000/
+
 Let me know if you have any question about the code!
 
 
