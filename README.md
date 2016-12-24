@@ -14,7 +14,7 @@ Django requires these modules:
 
 then to run the server 
 
-``
+`python manage.py runserver`
 
 ###for Angular 2
 
